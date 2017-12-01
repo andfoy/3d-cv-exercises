@@ -1,0 +1,431 @@
+\documentclass{article}
+
+\usepackage[small,compact]{titlesec}
+\usepackage[backend=biber]{biblatex}
+%\usepackage[spanish]{babel}
+\usepackage{epsfig}
+\usepackage{array}
+\usepackage{xfrac}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{todonotes}
+\usepackage{centernot}
+\usepackage{textcomp}
+\usepackage{blindtext}
+\usepackage{centernot}
+\usepackage{wasysym}
+\usepackage{siunitx}
+\usepackage[letterpaper]{geometry}
+%\usepackage{multicol}
+\usepackage{color}
+%\usepackage[table]{xcolor}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{multirow}
+\usepackage[small,it]{caption}
+\usepackage{titling}
+\usepackage{graphicx}
+%\bibliographystyle{plain}
+%\bibliographystyle{babplain}
+\usepackage{filecontents}
+\usepackage{titlesec}
+\usepackage[section]{placeins}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{abstract}
+\usepackage{minted}
+
+\sisetup{output-exponent-marker=\textsc{e}}
+
+\captionsetup[table]{name=Table}
+
+
+%\usepackage[makestderr=true]{pythontex}
+%\restartpythontexsession{\thesection}
+
+%\setpythontexoutputdir{./Temp}
+
+
+\addbibresource{Bibliography.bib}
+
+\pagestyle{fancy}
+\usepackage[utf8]{inputenc}
+\fancyhf{}
+\fancyhead[c]{\textbf{\@title}}
+\fancyfoot[c]{\thepage}
+\def\Section {\S}
+
+\newcommand\tstrut{\rule{0pt}{2.4ex}}
+\newcommand\bstrut{\rule[-1.0ex]{0pt}{0pt}}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\setlength{\droptitle}{-4em}
+\newcommand{\squishlist}{
+ \begin{list}{$\bullet$}
+  { \setlength{\itemsep}{0pt}
+     \setlength{\parsep}{3pt}
+     \setlength{\topsep}{3pt}
+     \setlength{\partopsep}{0pt}
+     \setlength{\leftmargin}{1.5em}
+     \setlength{\labelwidth}{1em}
+     \setlength{\labelsep}{0.5em} } }
+
+
+\newcommand{\squishlisttwo}{
+ \begin{list}{$\bullet$}
+  { \setlength{\itemsep}{0pt}
+    \setlength{\parsep}{0pt}
+    \setlength{\topsep}{0pt}
+    \setlength{\partopsep}{0pt}
+    \setlength{\leftmargin}{2em}
+    \setlength{\labelwidth}{1.5em}
+    \setlength{\labelsep}{0.5em} } }
+
+\newcommand{\squishend}{
+  \end{list}  }
+\footskip = 50pt
+\setlength{\skip\footins}{10pt}
+
+\newcounter{proofc}
+\renewcommand\theproofc{(\arabic{proofc})}
+\DeclareRobustCommand\stepproofc{\refstepcounter{proofc}\theproofc}
+\newenvironment{twoproof}{\tabular{@{\stepproofc}c|l}}{\endtabular}
+
+\usemintedstyle{tango}
+ %% The usual stuff that sits
+ %% between \documentclass
+ %%    and \begin{document}
+
+%\hypersetup{
+%    bookmarks= \quadtrue,         % show bookmarks bar?
+%    unicode= \quadfalse,          % non-Latin characters in Acrobat’s bookmarks
+%    pdftoolbar= \quadtrue,        % show Acrobat’s toolbar?
+%    pdfmenubar= \quadtrue,        % show Acrobat’s menu?
+%    pdffitwindow= \quadfalse,     % window fit to page when opened
+%    pdfstartview= \quad{FitH},    % fits the width of the page to the window
+%    pdftitle= \quad{My title},    % title
+%    pdfauthor= \quad{Author},     % author
+%    pdfsubject= \quad{Subject},   % subject of the document
+%    pdfcreator= \quad{Creator},   % creator of the document
+%    pdfproducer= \quad{Producer}, % producer of the document
+%    pdfkeywords= \quad{keyword1} {key2} {key3}, % list of keywords
+%    pdfnewwindow= \quadtrue,      % links in new window
+%    colorlinks= \quadfalse,       % false: boxed links; true: colored links
+%    linkcolor= \quadred,          % color of internal links (change box color with linkbordercolor)
+%    citecolor= \quadgreen,        % color of links to bibliography
+%    filecolor= \quadmagenta,      % color of file links
+%    urlcolor= \quadcyan           % color of external links
+%}
+
+%\addbibresource{References.bib}
+
+
+\begin{document}
+ %\thispagestyle{plain}
+ \def\maketitle{%\twocolumn[%
+ \thispagestyle{plain}
+ \vspace{-10ex}
+ \hrule
+ \bigskip
+ \begin{center}
+ {\Large{\textbf{\@title}}}
+ \end{center}
+ \bigskip
+ \hrule
+
+ \bigskip
+
+ \begin{flushleft}
+ \textbf{\normalsize{Ritu Yadav}} \hfill \texttt{@rhrk.uni-kl.de}
+ \\
+ \vspace{5pt}
+ \textbf{\normalsize{Shalini Bani}} \hfill \texttt{@rhrk.uni-kl.de}
+ \\
+ \vspace{5pt}
+ \textbf{\normalsize{Edgar Andr\'{e}s Margffoy Tuay}} \hfill \texttt{margffoy@rhrk.uni-kl.de}
+ \\
+ \vspace{5pt}
+ TU Kaiserslauten \hfill Augmented Vision
+ \\
+ \vspace{5pt}
+ 3D Computer Vision \vspace{5pt}
+\hfill \today \\ 
+ \end{flushleft}
+ %\hspace{265.2pt}
+ %\bigskip
+ %\bigskip
+ }
+\def\title#1{\def\@title{#1}}
+\title{\textit{Exercise 2}}
+
+
+
+% \squishlist    %% \begin{itemize}
+%\item First item
+%%\item Second item
+%%\squishend     %% \end{itemize}
+ %% The rest of the paper (with no maketitle)
+\maketitle
+
+\section{Properties of Rotation Matrices}
+\subsection{Proof that a Rotation Matrix satisfies Orthogonal Matrix constraints}
+\subsubsection*{$U^{-1} = U^{T} \Rightarrow UU^{T} = I$}
+\begin{alignat}{2}
+\nonumber
+U^{T} &= U^{-1} \\
+\nonumber
+UU^{T} &= \cancelto{I}{UU^{-1}} \\
+\Rightarrow ~ \Aboxed{UU^{T} &= I} \qed \label{eq:e1}
+\end{alignat}
+
+\subsubsection*{$UU^{T} = I \Rightarrow U^{-1} = U^{T}$}
+\begin{alignat}{2}
+\nonumber
+UU^{T} &= I \\
+\nonumber
+\cancelto{I}{U^{-1}U}U^{T} &= U^{-1} \\
+\Rightarrow ~ \Aboxed{U^{T} &= U^{-1}} \qed \label{eq:e2}
+\end{alignat}
+
+Given that the rotation matrix $U$ is orthogonal, it must satisfy the property $U^{T} = U^{-1} \Leftrightarrow UU^{T} = I$. As it is possible to observe on \eqref{eq:e1} and \eqref{eq:e2}, each one of the hypothesis implies each of the desired conclusions, therefore it is possible to conclude that a general rotation matrix is an orthogonal matrix. 
+
+\subsection{Geometrical interpretation of a Transformation Matrix determinant}
+As the determinant of a 3$\times$3  matrix represents the volume of the cube spanned by the rows of the matrix, it is possible to say that given an unitary basis matrix described by sides 1 and a transformation matrix $T$, the determinant of the transformation $\det{(T)}$, should inform about changes on the volume, as well on the length of the sides. If the determinant of the matrix is $\pm 1$, then its possible to conclude that the transformation preserves volumes and line lengths, whereas if the determinant is different from one, then the line lengths and the volume changes.
+
+For instance, given a translation matrix \eqref{eq:e3}\footnote{Expressed in terms of homogeneous coordinates}, it is possible to conclude that this transformation preserves line lengths and volumes as it is expected, \textit{i.e.,} \eqref{eq:e4}
+
+\begin{alignat}{2}
+&T = \begin{bmatrix}
+1 & 0 & 0 & a \\
+0 & 1 & 0 & b \\
+0 & 0 & 1 & c \\
+0 & 0 & 0 & 1
+\end{bmatrix} & \quad   \label{eq:e3}
+\end{alignat}
+
+\begin{alignat}{2}
+\Aboxed{\det(T) = -1} \label{eq:e4}
+\end{alignat}
+
+Other transformations that preserve line lengths and object volumes correspond to Rotations, and therefore Rotation and Translation transforms \eqref{eq:e5}, as it can be deduced on \eqref{eq:e6}.
+
+\begin{alignat}{2}
+&T = \begin{bmatrix}
+0 & -1 & 0 & a \\
+1 & 0 & 0 & b \\
+0 & 0 & -1 & c \\
+0 & 0 & 0 & 1
+\end{bmatrix} & \quad   \label{eq:e5}
+\end{alignat}
+
+\begin{alignat}{2}
+\Aboxed{\det(T) = -1} \label{eq:e6}
+\end{alignat}
+
+Also, it is possible to show that scaling transformation matrices \eqref{eq:e7} modify line lengths and volumes, as their determinant is different from one \eqref{eq:e8}.
+
+\begin{alignat}{2}
+&T = \begin{bmatrix}
+0 & -2 & 0 & a \\
+2 & 0 & 0 & b \\
+0 & 0 & -2 & c \\
+0 & 0 & 0 & 1
+\end{bmatrix} & \quad   \label{eq:e7}
+\end{alignat}
+
+\begin{alignat}{2}
+\Aboxed{\det(T) = 8} \label{eq:e8}
+\end{alignat}
+
+\section{Transformation Chain between 3D world coordinates and 2D image coordinates}
+
+In first instance, assuming the camera position is rectified with respect to the world coordinate frame, we define the projection of 3D world point to a 2D point on the image plane, as defined on  \eqref{eq:e9}, $f'$ refers to the focal distance between the lensses' image plane and the aperture pinhole of the camera.
+
+\begin{alignat}{2}
+\underbrace{\vphantom{\begin{bmatrix}n^2 \\ n^3 \end{bmatrix}}\begin{bmatrix}
+x  \\
+y  \\
+z
+\end{bmatrix}}_{\mathbf{3D}} \Rightarrow f' \cdot 
+\underbrace{\vphantom{\begin{bmatrix}n^2 \\ n^3 \end{bmatrix}}\begin{bmatrix}
+\sfrac{x}{z}  \\
+\sfrac{y}{z}
+\end{bmatrix}}_{\mathbf{2D}} \label{eq:e9}
+\end{alignat}
+
+As it can be observed, this transformation is not linear, which implies that it cannot be done only by multiplying the 3D coordinate by a transformation matrix that projects it into 2D. However, this can projection can be expressed as a linear operation using homogeneous coordinates \eqref{eq:e10}, which consists on extending the representation of the point into a line on a higher dimension, \textit{i.e.,} Add the number 1 as third/fourth coordinate to a 2D/3D vector/point. 
+
+\begin{alignat}{2}
+\begin{bmatrix}
+x  \\
+y
+\end{bmatrix} \rightarrow
+\begin{bmatrix}
+x  \\
+y  \\
+1
+\end{bmatrix} \quad
+\begin{bmatrix}
+x  \\
+y  \\
+z
+\end{bmatrix} \rightarrow
+\begin{bmatrix}
+x  \\
+y  \\
+z  \\
+1
+\end{bmatrix} \label{eq:e10}
+\end{alignat}
+
+
+To represent a point on Cartesian Coordinates, back from Homogeneous Coordinates, it's only necessary to divide all the other coordinates by the last one \eqref{eq:e11}.
+
+\begin{alignat}{2}
+\begin{bmatrix}
+x  \\
+y  \\
+w
+\end{bmatrix} \rightarrow
+\begin{bmatrix}
+\sfrac{x}{w}  \\
+\sfrac{y}{w}  \\
+\end{bmatrix} \quad
+\begin{bmatrix}
+x  \\
+y  \\
+z  \\
+w
+\end{bmatrix} \rightarrow
+\begin{bmatrix}
+\sfrac{x}{w}  \\
+\sfrac{y}{w}  \\
+\sfrac{z}{w}
+\end{bmatrix} \label{eq:e11}
+\end{alignat}
+
+By using Homogeneous Coordinates, we can rewrite the projection expression presented on \eqref{eq:e9}, and present it as a linear transformation matrix on homogeneous coordinates \eqref{eq:e12}. By doing so, it is possible to apply and collapse previous linear transformations, such as rotations, scaling and translations, storing all of them on a single convenient matrix. 
+
+\begin{alignat}{2}
+\begin{bmatrix}
+1 & 0 & 0 & 0  \\
+0 & 1 & 0 & 0  \\
+0 & 0 & \sfrac{1}{f'} & 0
+\end{bmatrix}
+\begin{bmatrix}
+x  \\
+y  \\
+z \\
+1
+\end{bmatrix} =
+\begin{bmatrix}
+x  \\
+y  \\
+\sfrac{z}{f'}
+\end{bmatrix} \rightarrow
+f' \cdot \begin{bmatrix}
+\sfrac{x}{z}  \\
+\sfrac{y}{z}
+\end{bmatrix} \label{eq:e12}
+\end{alignat}
+
+It is necessary to observe that it was assumed previously that both the camera and the world share the same coordinate frame. However in the reality, these two coordinate frames are on different positions, therefore it is necessary to introduce a novel matrix $R^t_{wc}$ that translates ($T_{wc}$) and rotates ($R_{wc}$) a point from the world's coordinate frame to the camera's one. This transformation must be done before the projection to the image plane on 2D.
+
+
+\begin{alignat}{2}
+R^t_{wc} =
+\begin{bmatrix}
+R_{wc} & T_{wc} \\
+0^{T} & 1
+\end{bmatrix}
+\end{alignat}
+
+
+So far, the projection steps have been given in terms of the extrinsic camera parameters, which refer to the conversion between world coordinates points to the corresponding points on the camera reference. Also, the projection between 3D world coordinates to ($x$, $y$, $z$) to pixels ($u$, $v$) was given on terms of a single ideal parameter $f'$. However, it is necessary to understand that this step depends on a set of parameters intrinsic to the camera itself, such as the size of each pixel on the sensor matrix \eqref{eq:e13}, the image sensor matrix position (coordinate origin) \eqref{eq:e14}, and also possible sensor matrix rotation due to assembly defects \eqref{eq:e15}. Using homogeneous coordinates, it is possible to express the intrinsic camera parameters matrix $K$ as in \eqref{eq:e16}.
+
+\begin{alignat}{3}
+u &= \alpha \frac{x}{z} &\qquad v &= \beta \frac{y}{z} \label{eq:e13} \\ 
+u &= \alpha \frac{x}{z} + u_0 &\qquad v &= \beta \frac{y}{z} + v_0 \label{eq:e14} \\
+u &= \alpha \frac{x}{z} - \alpha \cot{(\theta)} \frac{y}{z}  + u_0 &\qquad v &= \frac{\beta}{\sin{(\theta)}} \frac{y}{z} + v_0 \label{eq:e15}
+\end{alignat}
+
+
+\begin{alignat}{3}
+K = \begin{bmatrix}
+\alpha & -\alpha \cot{(\theta)} & u_0 & 0   \\
+0 & \sfrac{\beta}{\sin{(\theta)}} & v_0 & 0  \\
+0 & 0 & 1 & 0
+\end{bmatrix} \label{eq:e16}
+\end{alignat}
+
+In summary, to transform a 3D world coordinate point $\vec{p}_w$ to a 2D pixel point on the camera image $\vec{p}$, it is essential to transform first by the extrinsic parameters, and then by the intrinsic parameters. By using homogeneous coordinates, it's possible to merge both parameters onto a single matrix $M$, as shown on \eqref{eq:e18}.
+
+\begin{alignat}{2}
+\nonumber
+\vec{p} &= KR^t_{wc} \vec{p}_w \\
+\Rightarrow ~ \Aboxed{\vec{p} &= M \vec{p}_w} \label{eq:e18}
+\end{alignat}
+
+
+
+%\begin{figure}[!htbp]
+%\centering
+%\includegraphics[scale=0.3]{./Assets/1.png}
+%\caption{Traza de Wireshark que presenta la emisión y recepción de paquetes ICMP enviados a un conjunto de %clientes presentes en la misma red.}
+%\end{figure}
+
+
+%\section{Diseño de filtros ideales}
+
+%\begin{alignat}{2}
+%h &= \begin{bmatrix}
+%1 & 1 & 1 \\
+%1 & 1 & 1 \\
+%1 & 1 & 1 
+%\end{bmatrix} \label{eq:e6}
+%\end{alignat}
+
+
+% \begin{equation}
+% \begin{aligned}
+% f ~:~ &\mathbb{R} &\longrightarrow ~ &\mathbb{R} \label{eq:e6} \\
+%     &t &\longmapsto ~ &f(t)
+% \end{aligned}
+% \end{equation}
+% \begin{equation}
+% \begin{aligned}
+% x ~:~ &\mathbb{Z} &\longrightarrow ~ &\mathbb{R} \label{eq:e7} \\
+%     &n &\longmapsto ~ &x[n]
+% \end{aligned}
+% \end{equation}
+
+
+
+% \begin{figure*}[!htbp]
+% \centering
+% \epsfig{file=./Assets/Discrete.pdf,width=1.0\linewidth,clip=}
+% \caption{Ejemplos de señales discretas}
+% \label{Fig:F3}
+% \end{figure*}
+
+
+
+
+%\bibliography{biblios} \nocite{*}
+\newpage
+\nocite{*}
+\printbibliography
+
+
+
+%\newcounter{proofc}
+%\renewcommand\theproofc{(\arabic{proofc})}
+%\DeclareRobustCommand\stepproofc{\refstepcounter{proofc}\theproofc}
+%\newenvironment{twoproof}{\tabular{@{\stepproofc}c|l}}{\endtabular}
+
+
+\end{document}
