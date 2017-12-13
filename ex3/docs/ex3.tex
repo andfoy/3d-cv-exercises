@@ -1,0 +1,255 @@
+\documentclass{article}
+
+\usepackage[small,compact]{titlesec}
+\usepackage[backend=biber]{biblatex}
+%\usepackage[spanish]{babel}
+\usepackage{epsfig}
+\usepackage{array}
+\usepackage{xfrac}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{todonotes}
+\usepackage{centernot}
+\usepackage{textcomp}
+\usepackage{blindtext}
+\usepackage{centernot}
+\usepackage{wasysym}
+\usepackage{siunitx}
+\usepackage[letterpaper]{geometry}
+%\usepackage{multicol}
+\usepackage{color}
+%\usepackage[table]{xcolor}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{multirow}
+\usepackage[small,it]{caption}
+\usepackage{titling}
+\usepackage{graphicx}
+%\bibliographystyle{plain}
+%\bibliographystyle{babplain}
+\usepackage{filecontents}
+\usepackage{titlesec}
+\usepackage[section]{placeins}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{abstract}
+\usepackage{minted}
+
+\sisetup{output-exponent-marker=\textsc{e}}
+
+\captionsetup[table]{name=Table}
+
+
+%\usepackage[makestderr=true]{pythontex}
+%\restartpythontexsession{\thesection}
+
+%\setpythontexoutputdir{./Temp}
+
+
+\addbibresource{Bibliography.bib}
+
+\pagestyle{fancy}
+\usepackage[utf8]{inputenc}
+\fancyhf{}
+\fancyhead[c]{\textbf{\@title}}
+\fancyfoot[c]{\thepage}
+\def\Section {\S}
+
+\newcommand\tstrut{\rule{0pt}{2.4ex}}
+\newcommand\bstrut{\rule[-1.0ex]{0pt}{0pt}}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\setlength{\droptitle}{-4em}
+\newcommand{\squishlist}{
+ \begin{list}{$\bullet$}
+  { \setlength{\itemsep}{0pt}
+     \setlength{\parsep}{3pt}
+     \setlength{\topsep}{3pt}
+     \setlength{\partopsep}{0pt}
+     \setlength{\leftmargin}{1.5em}
+     \setlength{\labelwidth}{1em}
+     \setlength{\labelsep}{0.5em} } }
+
+
+\newcommand{\squishlisttwo}{
+ \begin{list}{$\bullet$}
+  { \setlength{\itemsep}{0pt}
+    \setlength{\parsep}{0pt}
+    \setlength{\topsep}{0pt}
+    \setlength{\partopsep}{0pt}
+    \setlength{\leftmargin}{2em}
+    \setlength{\labelwidth}{1.5em}
+    \setlength{\labelsep}{0.5em} } }
+
+\newcommand{\squishend}{
+  \end{list}  }
+\footskip = 50pt
+\setlength{\skip\footins}{10pt}
+
+\newcounter{proofc}
+\renewcommand\theproofc{(\arabic{proofc})}
+\DeclareRobustCommand\stepproofc{\refstepcounter{proofc}\theproofc}
+\newenvironment{twoproof}{\tabular{@{\stepproofc}c|l}}{\endtabular}
+
+\usemintedstyle{tango}
+ %% The usual stuff that sits
+ %% between \documentclass
+ %%    and \begin{document}
+
+%\hypersetup{
+%    bookmarks= \quadtrue,         % show bookmarks bar?
+%    unicode= \quadfalse,          % non-Latin characters in Acrobat’s bookmarks
+%    pdftoolbar= \quadtrue,        % show Acrobat’s toolbar?
+%    pdfmenubar= \quadtrue,        % show Acrobat’s menu?
+%    pdffitwindow= \quadfalse,     % window fit to page when opened
+%    pdfstartview= \quad{FitH},    % fits the width of the page to the window
+%    pdftitle= \quad{My title},    % title
+%    pdfauthor= \quad{Author},     % author
+%    pdfsubject= \quad{Subject},   % subject of the document
+%    pdfcreator= \quad{Creator},   % creator of the document
+%    pdfproducer= \quad{Producer}, % producer of the document
+%    pdfkeywords= \quad{keyword1} {key2} {key3}, % list of keywords
+%    pdfnewwindow= \quadtrue,      % links in new window
+%    colorlinks= \quadfalse,       % false: boxed links; true: colored links
+%    linkcolor= \quadred,          % color of internal links (change box color with linkbordercolor)
+%    citecolor= \quadgreen,        % color of links to bibliography
+%    filecolor= \quadmagenta,      % color of file links
+%    urlcolor= \quadcyan           % color of external links
+%}
+
+%\addbibresource{References.bib}
+
+
+\begin{document}
+ %\thispagestyle{plain}
+ \def\maketitle{%\twocolumn[%
+ \thispagestyle{plain}
+ \vspace{-10ex}
+ \hrule
+ \bigskip
+ \begin{center}
+ {\Large{\textbf{\@title}}}
+ \end{center}
+ \bigskip
+ \hrule
+
+ \bigskip
+
+ \begin{flushleft}
+ \textbf{\normalsize{Ritu Yadav}} \hfill \texttt{ryadav@rhrk.uni-kl.de}
+ \\
+ \vspace{5pt}
+ \textbf{\normalsize{Shalini Bani}} \hfill \texttt{bani@rhrk.uni-kl.de}
+ \\
+ \vspace{5pt}
+ \textbf{\normalsize{Edgar Andr\'{e}s Margffoy Tuay}} \hfill \texttt{margffoy@rhrk.uni-kl.de}
+ \\
+ \vspace{5pt}
+ TU Kaiserslauten \hfill Augmented Vision
+ \\
+ \vspace{5pt}
+ 3D Computer Vision \vspace{5pt}
+\hfill \today \\ 
+ \end{flushleft}
+ %\hspace{265.2pt}
+ %\bigskip
+ %\bigskip
+ }
+\def\title#1{\def\@title{#1}}
+\title{\textit{Exercise 3}}
+
+
+
+% \squishlist    %% \begin{itemize}
+%\item First item
+%%\item Second item
+%%\squishend     %% \end{itemize}
+ %% The rest of the paper (with no maketitle)
+\maketitle
+
+\section{General Homography Transformation Matrix}
+An homography ($\tilde{H} \in \mathbb{P}^{n \times n}$) on homogeneous coordinates is defined as the composition of a general Affine transformation $\mathbf{A} \in \mathbb{R}^{(n - 1) \times (n - 1)}$ (Rotation, Scaling, Reflection, Shearing), a translation $\mathbf{t} \in \mathbb{R}^{(n - 1) \times 1}$ and a projection $\mathbf{u} \in \mathbb{R}^{1 \times (n - 1)}$. Finally, the matrix is defined on terms of a scalar scaling factor $\alpha \in \mathbb{R}$ that accounts for the homogeneous coordinates transform. Written as a n-dimensional matrix \eqref{eq:e1}, the homography has $n^2 - 1$ degrees of freedom (DoF), dissected as it follows: the affine transformation accounts for $(n - 1)^2$ DoF, the translation transform has $n - 1$ DoF and the projection presents $n -1$ DoF. 
+
+It is necessary to establish that the scalar term $\alpha$ does not increase the total number of DoF of the transformation, as it describes an scaling transform that only takes effect when a coordinate on projective space is projected back into Cartesian coordinates.
+
+\begin{alignat}{2}
+&\tilde{H} = \begin{bmatrix}
+\mathbf{A} & \mathbf{t} \\
+\mathbf{u}^{T} & \alpha
+\end{bmatrix} & \quad   \label{eq:e1}
+\end{alignat}
+
+\section{Proof that an Homogeneous transform preserves lines}
+Given a point $x$ on projective space $\mathbb{P}^2$, a line is defined using a coefficient vector $L \in \mathbb{R}^{3 \times 1}$, as shown on \eqref{eq:e2}. It is possible to proof that an homography transform, described through a projective matrix $H$ preserves lines by showing that the line coeffcients are transformed by the inverse homography matrix $B$. This implies that the resulting point $x_{h}$ after applying the homography belongs to the line defined by the new set of coefficients, therefore, the Homography preserves lines.
+
+\begin{alignat}{3}
+L^{T}x &= 0 \qquad &L, x &\in \mathbb{P}^{2 \times 1} \label{eq:e2} \\
+\nonumber
+\underbrace{L^{T}H^{-1}}_{B}Hx &= 0 \qquad &H &\in \mathbb{P}^{2 \times 2} \\
+\nonumber
+B\underbrace{Hx}_{x_h} &= 0 \qquad &B &\in \mathbb{P}^{1 \times 2} \\
+\Rightarrow~ \Aboxed{Bx_h &= 0} \qquad &x_h &\in \mathbb{P}^{2 \times 1} \qed \label{eq:e3}
+\end{alignat}
+
+
+%\begin{figure}[!htbp]
+%\centering
+%\includegraphics[scale=0.3]{./Assets/1.png}
+%\caption{Traza de Wireshark que presenta la emisión y recepción de paquetes ICMP enviados a un conjunto de %clientes presentes en la misma red.}
+%\end{figure}
+
+
+%\section{Diseño de filtros ideales}
+
+%\begin{alignat}{2}
+%h &= \begin{bmatrix}
+%1 & 1 & 1 \\
+%1 & 1 & 1 \\
+%1 & 1 & 1 
+%\end{bmatrix} \label{eq:e6}
+%\end{alignat}
+
+
+% \begin{equation}
+% \begin{aligned}
+% f ~:~ &\mathbb{R} &\longrightarrow ~ &\mathbb{R} \label{eq:e6} \\
+%     &t &\longmapsto ~ &f(t)
+% \end{aligned}
+% \end{equation}
+% \begin{equation}
+% \begin{aligned}
+% x ~:~ &\mathbb{Z} &\longrightarrow ~ &\mathbb{R} \label{eq:e7} \\
+%     &n &\longmapsto ~ &x[n]
+% \end{aligned}
+% \end{equation}
+
+
+
+% \begin{figure*}[!htbp]
+% \centering
+% \epsfig{file=./Assets/Discrete.pdf,width=1.0\linewidth,clip=}
+% \caption{Ejemplos de señales discretas}
+% \label{Fig:F3}
+% \end{figure*}
+
+
+
+
+%\bibliography{biblios} \nocite{*}
+\newpage
+\nocite{*}
+\printbibliography
+
+
+
+%\newcounter{proofc}
+%\renewcommand\theproofc{(\arabic{proofc})}
+%\DeclareRobustCommand\stepproofc{\refstepcounter{proofc}\theproofc}
+%\newenvironment{twoproof}{\tabular{@{\stepproofc}c|l}}{\endtabular}
+
+
+\end{document}

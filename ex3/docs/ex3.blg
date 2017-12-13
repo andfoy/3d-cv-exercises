@@ -1,0 +1,15 @@
+[0] Config.pm:354> INFO - This is Biber 2.7 (beta)
+[0] Config.pm:357> INFO - Logfile is 'ex3.blg'
+[21] biber:303> INFO - === mié dic 13, 2017, 15:24:12
+[34] Biber.pm:360> INFO - Reading 'ex3.bcf'
+[86] Biber.pm:833> INFO - Using all citekeys in bib section 0
+[96] Biber.pm:3671> INFO - Processing section 0
+[107] Biber.pm:3841> INFO - Looking for bibtex format file 'Bibliography.bib' for section 0
+[108] bibtex.pm:1424> INFO - Decoding LaTeX character macros into UTF-8
+[111] bibtex.pm:1281> INFO - Found BibTeX data source 'Bibliography.bib'
+[137] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[137] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[137] Biber.pm:3500> INFO - Sorting list 'nty/global/' of type 'entry' with scheme 'nty' and locale 'en-US'
+[137] Biber.pm:3506> INFO - No sort tailoring available for locale 'en-US'
+[140] bbl.pm:608> INFO - Writing 'ex3.bbl' with encoding 'UTF-8'
+[140] bbl.pm:712> INFO - Output to ex3.bbl
