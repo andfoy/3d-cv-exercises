@@ -15,9 +15,11 @@ def compute_pose(K, H):
     Rt = np.dot(np.linalg.pinv(K), H)
     r1, r2 = Rt[:, 0], Rt[:, 1]
     t = Rt[:, 2]
+    norm = (np.linalg.norm(r1) + np.linalg.norm(r2)) / 2
     r1 = r1 / np.linalg.norm(r1)
     r2 = r2 / np.linalg.norm(r2)
     r3 = np.cross(r1, r2)
+    t /= norm
     R = np.vstack([r1, r2, r3]).T
     return R, t
 

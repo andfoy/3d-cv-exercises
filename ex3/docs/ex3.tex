@@ -196,6 +196,11 @@ B\underbrace{Hx}_{x_h} &= 0 \qquad &B &\in \mathbb{P}^{1 \times 2} \\
 \end{alignat}
 
 
+\section{Geometrical meaning of translation vector values}
+By applying the extrinsic parameter matrix $[R | t]$ to the camera pose coordinate system origin $(0, 0, 0, 1)^T$, is possible to obtain the corrected position of the camera with respect to the world coordinate system. \textit{i.e.,} The translation vector $t$. On this case, the displacement vector establishes the real position of the camera with respect to the world and the movement should the camera have to take in order to be perpendicular to the image plane.
+
+It is possible to infer from the negative values on the translation vector that the coordinate system is defined around the chessboard center. This implies that the chessboard corners are defined in terms of offsets from the center. \textit{i.e.,} Left coordinates are negative and Right coordinates are positive. This can happen if the homography computation was done taking into account offset coordinates from the board center instead of top-left centered coordinates.
+
 %\begin{figure}[!htbp]
 %\centering
 %\includegraphics[scale=0.3]{./Assets/1.png}

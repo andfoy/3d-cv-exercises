@@ -1,12 +1,12 @@
 # Fdb version 3
-["biber ex3"] 1513175051 "ex3.bcf" "ex3.bbl" "ex3" 1513178553
+["biber ex3"] 1513175051 "ex3.bcf" "ex3.bbl" "ex3" 1513350860
   "Bibliography.bib" 1512052672 647 7c1a270b1c47ee34e4c7f34d8bd1a2c2 ""
-  "ex3.bcf" 1513178552 95736 f20d1fdfac1e642a7bbf55b28c79ebec ""
+  "ex3.bcf" 1513350860 95736 f20d1fdfac1e642a7bbf55b28c79ebec ""
   (generated)
-  "ex3.bbl"
   "ex3.blg"
-["pdflatex"] 1513178545 "ex3.tex" "ex3.pdf" "ex3" 1513178553
-  "/dev/null" 1513168108 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "ex3.bbl"
+["pdflatex"] 1513350860 "ex3.tex" "ex3.pdf" "ex3" 1513350860
+  "/dev/null" 1513350123 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/etc/texmf/web2c/texmf.cnf" 1509284706 1101 af7716885e081ab43982cab7b4672c1a ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -232,16 +232,16 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1487479758 2044936 0edf5ca64352b50b145b46ea2ee03d92 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1487479897 3869832 bd3290e661c59888e35a90957617aecf ""
   "ex3.aex" 0 -1 0 ""
-  "ex3.aux" 1513178552 1815 aaea8d679e3b10986727370dbd0ae9d2 ""
+  "ex3.aux" 1513350860 1936 acde83f1162866c7495a355fa6a9397e ""
   "ex3.bbl" 1513175052 3609 f1582f56633b3d65eb61581e57f309c5 "biber ex3"
-  "ex3.out" 1513178552 161 0fd47f35c0cb3d17202d9bb99fd24bc8 ""
-  "ex3.run.xml" 1513178552 2300 138dab32facbaf328aa45146b34d968d ""
-  "ex3.tex" 1513178540 8030 7ca549d5cbb524917b7ec70f10e6357b ""
+  "ex3.out" 1513350860 244 2721795c59aa046eb32059b9138e5529 ""
+  "ex3.run.xml" 1513350860 2300 138dab32facbaf328aa45146b34d968d ""
+  "ex3.tex" 1513350858 9030 451d1d633b854969e65d1e65f3224f2e ""
   "ex3.w18" 0 -1 0 ""
   (generated)
   "ex3.log"
   "ex3.out"
+  "ex3.bcf"
   "ex3.aux"
   "ex3.pdf"
   "ex3.run.xml"
-  "ex3.bcf"
