@@ -4,6 +4,13 @@ import numpy as np
 import scipy.io as sio
 
 
+def compute_pure_rotation(K, H):
+    R = np.dot(np.dot(np.linalg.pinv(K), H), K)
+    for i in range(0, R.shape[1]):
+        R[:, i] /= np.linalg.norm(R[:, i])
+    return R
+
+
 def compute_pose(K, H):
     Rt = np.dot(np.linalg.pinv(K), H)
     r1, r2 = Rt[:, 0], Rt[:, 1]
@@ -22,7 +29,7 @@ def correct_rotation_matrix(R):
 
 
 def compute_relative_rotation(K, H):
-    R, _ = compute_pose(K, H)
+    R = compute_pure_rotation(K, H)
 
     print('-' * 20)
     print('Rotation matrix estimation from homography')
