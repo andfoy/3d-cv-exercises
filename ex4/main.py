@@ -6,7 +6,7 @@ import numpy as np
 import os.path as osp
 import scipy.io as sio
 import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
+# import matplotlib.image as mpimg
 
 
 if __name__ == '__main__':
@@ -15,8 +15,8 @@ if __name__ == '__main__':
         os.makedirs(output_path)
 
     print('Loading images...')
-    img1 = mpimg.imread(osp.join('data', 'Camera00.jpg'))
-    img2 = mpimg.imread(osp.join('data', 'Camera01.jpg'))
+    img1 = cv2.imread(osp.join('data', 'Camera00.jpg'))
+    img2 = cv2.imread(osp.join('data', 'Camera01.jpg'))
     H, W, _ = img1.shape
     dims = np.array([[W, H, 1]])
 
@@ -61,12 +61,12 @@ if __name__ == '__main__':
         # y_int = (int-line[-1] / line[1])
         start = (x_int, 0) if x_int > 0 else (W, y(W))
         end = (0, y_int)
-        print([start, end])
+        # print([start, end])
         bgr = cv2.cvtColor(color, cv2.COLOR_HSV2BGR)
         cv2.line(out, start, end, tuple(bgr.flatten().tolist()), 2)
         color[..., 0] += step
 
-    print(count)
+    # print(count)
     for i in range(0, corners_c1.shape[-1]):
         point = tuple(corners_c1[:, i].astype(np.int64).tolist())
         x1 = np.expand_dims(corners_c0[:, i], axis=1)
