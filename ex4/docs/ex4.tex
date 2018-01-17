@@ -1,0 +1,308 @@
+\documentclass{article}
+
+\usepackage[small,compact]{titlesec}
+\usepackage[backend=biber]{biblatex}
+%\usepackage[spanish]{babel}
+\usepackage{epsfig}
+\usepackage{array}
+\usepackage{xfrac}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{todonotes}
+\usepackage{centernot}
+\usepackage{textcomp}
+\usepackage{blindtext}
+\usepackage{centernot}
+\usepackage{wasysym}
+\usepackage{siunitx}
+\usepackage[letterpaper]{geometry}
+%\usepackage{multicol}
+\usepackage{color}
+%\usepackage[table]{xcolor}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{multirow}
+\usepackage[small,it]{caption}
+\usepackage{titling}
+\usepackage{graphicx}
+%\bibliographystyle{plain}
+%\bibliographystyle{babplain}
+\usepackage{filecontents}
+\usepackage{titlesec}
+\usepackage[section]{placeins}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{abstract}
+\usepackage{minted}
+
+\sisetup{output-exponent-marker=\textsc{e}}
+
+\captionsetup[table]{name=Table}
+
+
+%\usepackage[makestderr=true]{pythontex}
+%\restartpythontexsession{\thesection}
+
+%\setpythontexoutputdir{./Temp}
+
+
+\addbibresource{Bibliography.bib}
+
+\pagestyle{fancy}
+\usepackage[utf8]{inputenc}
+\fancyhf{}
+\fancyhead[c]{\textbf{\@title}}
+\fancyfoot[c]{\thepage}
+\def\Section {\S}
+
+\newcommand\tstrut{\rule{0pt}{2.4ex}}
+\newcommand\bstrut{\rule[-1.0ex]{0pt}{0pt}}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\setlength{\droptitle}{-4em}
+\newcommand{\squishlist}{
+ \begin{list}{$\bullet$}
+  { \setlength{\itemsep}{0pt}
+     \setlength{\parsep}{3pt}
+     \setlength{\topsep}{3pt}
+     \setlength{\partopsep}{0pt}
+     \setlength{\leftmargin}{1.5em}
+     \setlength{\labelwidth}{1em}
+     \setlength{\labelsep}{0.5em} } }
+
+
+\newcommand{\squishlisttwo}{
+ \begin{list}{$\bullet$}
+  { \setlength{\itemsep}{0pt}
+    \setlength{\parsep}{0pt}
+    \setlength{\topsep}{0pt}
+    \setlength{\partopsep}{0pt}
+    \setlength{\leftmargin}{2em}
+    \setlength{\labelwidth}{1.5em}
+    \setlength{\labelsep}{0.5em} } }
+
+\newcommand{\squishend}{
+  \end{list}  }
+\footskip = 50pt
+\setlength{\skip\footins}{10pt}
+
+\newcounter{proofc}
+\renewcommand\theproofc{(\arabic{proofc})}
+\DeclareRobustCommand\stepproofc{\refstepcounter{proofc}\theproofc}
+\newenvironment{twoproof}{\tabular{@{\stepproofc}c|l}}{\endtabular}
+
+\usemintedstyle{tango}
+ %% The usual stuff that sits
+ %% between \documentclass
+ %%    and \begin{document}
+
+%\hypersetup{
+%    bookmarks= \quadtrue,         % show bookmarks bar?
+%    unicode= \quadfalse,          % non-Latin characters in Acrobat’s bookmarks
+%    pdftoolbar= \quadtrue,        % show Acrobat’s toolbar?
+%    pdfmenubar= \quadtrue,        % show Acrobat’s menu?
+%    pdffitwindow= \quadfalse,     % window fit to page when opened
+%    pdfstartview= \quad{FitH},    % fits the width of the page to the window
+%    pdftitle= \quad{My title},    % title
+%    pdfauthor= \quad{Author},     % author
+%    pdfsubject= \quad{Subject},   % subject of the document
+%    pdfcreator= \quad{Creator},   % creator of the document
+%    pdfproducer= \quad{Producer}, % producer of the document
+%    pdfkeywords= \quad{keyword1} {key2} {key3}, % list of keywords
+%    pdfnewwindow= \quadtrue,      % links in new window
+%    colorlinks= \quadfalse,       % false: boxed links; true: colored links
+%    linkcolor= \quadred,          % color of internal links (change box color with linkbordercolor)
+%    citecolor= \quadgreen,        % color of links to bibliography
+%    filecolor= \quadmagenta,      % color of file links
+%    urlcolor= \quadcyan           % color of external links
+%}
+
+%\addbibresource{References.bib}
+
+
+\begin{document}
+ %\thispagestyle{plain}
+ \def\maketitle{%\twocolumn[%
+ \thispagestyle{plain}
+ \vspace{-10ex}
+ \hrule
+ \bigskip
+ \begin{center}
+ {\Large{\textbf{\@title}}}
+ \end{center}
+ \bigskip
+ \hrule
+
+ \bigskip
+
+ \begin{flushleft}
+ \textbf{\normalsize{Ritu Yadav}} \hfill \texttt{ryadav@rhrk.uni-kl.de}
+ \\
+ \vspace{5pt}
+ \textbf{\normalsize{Edgar Andr\'{e}s Margffoy Tuay}} \hfill \texttt{margffoy@rhrk.uni-kl.de}
+ \\
+ \vspace{5pt}
+ TU Kaiserslauten \hfill Augmented Vision
+ \\
+ \vspace{5pt}
+ 3D Computer Vision \vspace{5pt}
+\hfill \today \\ 
+ \end{flushleft}
+ %\hspace{265.2pt}
+ %\bigskip
+ %\bigskip
+ }
+\def\title#1{\def\@title{#1}}
+\title{\textit{Exercise 4}}
+
+
+
+% \squishlist    %% \begin{itemize}
+%\item First item
+%%\item Second item
+%%\squishend     %% \end{itemize}
+ %% The rest of the paper (with no maketitle)
+\maketitle
+
+\section{Relation between corresponding points on different cameras}
+As a line on 3D space represents a point on an 2D image plane and a point on 3D space represents a line on its 2D projection, it is possible to affirm that a point on an image can be projected onto a line on 3D coordinates, which in turn can be proyected back (pointwise) onto the second image plane, defining an epipolar line. Therefore, given a point $x_0$ on the first view, its corresponding point $x_1$ on the second image must lie somewhere on the epipolar line $\ell$ spanned by $x_0$, as it is described on Figure~\ref{Fig:F1}.
+
+\begin{figure}[!htbp]
+\centering
+\epsfig{file=./Assets/Epipolar_diagram.pdf,width=0.5\linewidth,clip=}
+\caption{Relation between two corresponding points of two image planes}
+\label{Fig:F1}
+\end{figure}
+
+\section{Reconstruction from two point correspondences}
+Given a point correspondence $x_0 \leftrightarrow x_1$ and the calibration parameters for both cameras, the original 3D point can be obtained by calculating the intersection of the 3D backprojection lines of both points (triangulation).
+
+\section{Epipole calculation}
+An epipole $e$ is defined as the image projection of the center $C'$ of the other camera onto the image plane of the current camera with parameters $P$ \eqref{eq:e1}.
+
+\begin{alignat}{2}
+e &= PC' \label{eq:e1}
+\end{alignat}   
+
+Each epipolar line must pass through the epipole, as their corresponding epipolar plane rotates around the baseline (line that joins both camera centers $C$ and $C'$), while the epipoles remain unchanged.
+
+\section{Fundamental Matrix calculation: Uncalibrated case}
+To compute the Fundamental Matrix $F$ for two uncalibrated cameras, it is necessary to compute an approximation of it, by taking a large enough random sample of point correspondences between two images. For instance, it can proved that the total number of point correspondences must be larger than 5, as each point defines 3 unknowns to estimate their coordinates on 3D and both views account for 5 additional parameters. Given that each point correspondence imply 4 measurements, the total number of point correspondences $n$, must satisfy \eqref{eq:e2}
+
+\begin{alignat}{2}
+\nonumber
+4n &\geq 3n + 5 \\
+\Rightarrow ~ n &\geq 5 \label{eq:e2} 
+\end{alignat}
+
+Given $n$ correspondences, the matrix $F$ can be computed by finding an equivalent unflattened vector $f$\footnote{The fundamental matrix is then expressed as the matrix form of the vector $f$.} that is on the null-space of the matrix $A$, which have by columns the product between each correspondence coordinates combination of the $n$ points, \textit{i.e.,} $x_n \cdot x_n'$, $x_n \cdot y_n'$, $y_n \cdot y_n'$, $y_n' \cdot x_n$, $x_n$, $x_n'$, $y_n$ and $y_n'$. If an exact solution to the null-space search cannot be found, then the vector $f$ can be estimated using an Least Square Fit solution.
+
+\section{Fundamental Matrix calculation: Calibrated case}
+When calibration parameters $K_i[R_i ~|~ t_i]$ are available for $i = 0,1$, the fundamental matrix $F$ can be computed by leaving one of the cameras fixed and setting its intrinsic parameters as centered on the world's coordinate system. \textit{i.e.,} $P_0 = K_0[I ~|~ 0]$. Then, for any point $x_0$, its backprojection line is calculated \eqref{eq:e3} to take both its vanishing point at infinity $x_0(\infty)$ and also its origin $x_0(0)$. Then both points are projected onto the second image plane \eqref{eq:e4}, and their intersection is taken to compute the corresponding epipolar line \eqref{eq:e5}. Finally, the fundamental matrix is found by factoring all matrix terms of the expression \eqref{eq:e6}.
+
+\begin{alignat}{4}
+\nonumber
+P_0 &= K_0 [I ~|~ 0] \quad &P_1 &= K_1 [R_1 ~|~ t_1] \\
+x_0(z) &= \begin{bmatrix}
+z K_0^{-1} x_0 \\ 1
+\end{bmatrix}  ~\Rightarrow \quad &x_0(0) &= \begin{bmatrix}
+0 \\ 1
+\end{bmatrix} \quad x_0(\infty) &= \begin{bmatrix}
+K_0^{-1} x_0 \\ 0
+\end{bmatrix} \label{eq:e3}
+\end{alignat}  
+
+\begin{equation}
+\begin{alignedat}{2}
+P_1 x_0(0) &= K_1 \begin{bmatrix}
+R_1 & t_1
+\end{bmatrix} \begin{bmatrix}
+0 \\ 1
+\end{bmatrix} = K_1 t_1 \\
+P_1 x_0(\infty) &= K_1 \begin{bmatrix}
+R_1 & t_1
+\end{bmatrix} \begin{bmatrix}
+K_0^{-1} x_0 \\ 0
+\end{bmatrix} = K_1 R_1 K_0^{-1} x_0
+\end{alignedat} \label{eq:e4}
+\end{equation}
+    
+\begin{alignat}{2}
+\ell &= (K_1 t_1) \times (K_1 R_1 K_0^{-1} x_0) \label{eq:e5} \\
+\nonumber
+\ell &= K_1^{-T} (t_1 \times R_1 K_0^{-1} x_0) \\
+\nonumber
+\ell &= \underbrace{K_1^{-T} [t_1]_{\times} R_1 K_0^{-1}}_{F} x_0 \\
+\Rightarrow ~ \Aboxed{F &= K_1^{-T} [t_1]_{\times} R_1 K_0^{-1}} \qed \label{eq:e6}
+\end{alignat}
+
+%\begin{alignat}{2}
+%&\tilde{H} = \begin{bmatrix}
+%\mathbf{A} & \mathbf{t} \\
+%\mathbf{u}^{T} & \alpha
+%\end{bmatrix} & \quad   \label{eq:e1}
+%\end{alignat}
+
+
+
+%\begin{figure}[!htbp]
+%\centering
+%\includegraphics[scale=0.3]{./Assets/1.png}
+%\caption{Traza de Wireshark que presenta la emisión y recepción de paquetes ICMP enviados a un conjunto de %clientes presentes en la misma red.}
+%\end{figure}
+
+
+%\section{Diseño de filtros ideales}
+
+%\begin{alignat}{2}
+%h &= \begin{bmatrix}
+%1 & 1 & 1 \\
+%1 & 1 & 1 \\
+%1 & 1 & 1 
+%\end{bmatrix} \label{eq:e6}
+%\end{alignat}
+
+
+% \begin{equation}
+% \begin{aligned}
+% f ~:~ &\mathbb{R} &\longrightarrow ~ &\mathbb{R} \label{eq:e6} \\
+%     &t &\longmapsto ~ &f(t)
+% \end{aligned}
+% \end{equation}
+% \begin{equation}
+% \begin{aligned}
+% x ~:~ &\mathbb{Z} &\longrightarrow ~ &\mathbb{R} \label{eq:e7} \\
+%     &n &\longmapsto ~ &x[n]
+% \end{aligned}
+% \end{equation}
+
+
+
+% \begin{figure*}[!htbp]
+% \centering
+% \epsfig{file=./Assets/Discrete.pdf,width=1.0\linewidth,clip=}
+% \caption{Ejemplos de señales discretas}
+% \label{Fig:F3}
+% \end{figure*}
+
+
+
+
+%\bibliography{biblios} \nocite{*}
+\newpage
+\nocite{*}
+\printbibliography
+
+
+
+%\newcounter{proofc}
+%\renewcommand\theproofc{(\arabic{proofc})}
+%\DeclareRobustCommand\stepproofc{\refstepcounter{proofc}\theproofc}
+%\newenvironment{twoproof}{\tabular{@{\stepproofc}c|l}}{\endtabular}
+
+
+\end{document}
