@@ -9,6 +9,13 @@ import matplotlib.pyplot as plt
 # import matplotlib.image as mpimg
 
 
+def dist_point_line(x, l):
+    """Compute distance between a line and a point."""
+    a, b, c = l
+    x0, y0 = x
+    return np.abs(a * x0 + b * y0 + c) / np.sqrt(a**2 + b**2)
+
+
 if __name__ == '__main__':
     output_path = 'output'
     if not osp.exists(output_path):
@@ -43,16 +50,16 @@ if __name__ == '__main__':
         corners_c0[i: i + step, :] = c0_slice[np.argsort(c0_slice[:, 0])]
         corners_c1[i: i + step, :] = c1_slice[np.argsort(c1_slice[:, 0])]
     corners_c0_h = np.hstack((corners_c0, np.ones((corners_c0.shape[0], 1)))).T
-    l = np.dot(F, corners_c0_h)
+    lines = np.dot(F, corners_c0_h)
     corners_c1 = corners_c1.T
     corners_c0 = corners_c0.T
 
     color = np.uint8([[[0, 255, 255]]])
-    step = int(np.floor(179.0 / l.shape[-1]))
+    step = int(np.floor(179.0 / lines.shape[-1]))
     out = img2.copy()
     count = 0
-    for i in range(0, l.shape[-1]):
-        line = l[:, i]
+    for i in range(0, lines.shape[-1]):
+        line = lines[:, i]
         a, b, c = line.flatten().tolist()
         y = lambda x: int((-a / b) * (x + c / a))
         x_int = int(-c / a)
@@ -73,7 +80,30 @@ if __name__ == '__main__':
         x1 = np.vstack((x1, np.ones((1, 1))))
         x2 = np.expand_dims(corners_c1[:, i], axis=1)
         x2 = np.vstack((x2, np.ones((1, 1))))
-        # print(np.dot(np.dot(x2.T, F), x1))
+        print(np.dot(np.dot(x2.T, F), x1))
         cv2.circle(out, point, 6, (0, 255, 0), -1)
 
-    cv2.imwrite(osp.join(output_path, 'epipolar_lines_cam0.jpg'), out)
+    cv2.imwrite(osp.join(output_path, 'epilines.jpg'), out)
+
+    color = np.uint8([[[0, 255, 255]]])
+    step = int(np.floor(179.0 / lines.shape[-1]))
+    composed_img = np.concatenate((img1, img2), axis=0)
+    for i in range(0, lines.shape[-1]):
+        line = lines[:, i].flatten().tolist()
+        c0_p = tuple(corners_c0[:, i].astype(np.int64).tolist())
+        min_dist = np.inf
+        feature_match = None
+        for j in range(1, lines.shape[-1]):
+            c1_p = tuple(corners_c1[:, i].astype(np.int64).tolist())
+            dist = dist_point_line(c1_p, line)
+            feature_match, min_dist = (
+                (c1_p, dist) if dist < min_dist else (feature_match, min_dist))
+        assert feature_match is not None
+        c1_p = (c1_p[0], c1_p[1] + H)
+        cv2.circle(composed_img, c0_p, 6, (0, 255, 0), -1)
+        cv2.circle(composed_img, c1_p, 6, (0, 255, 0), -1)
+        bgr = cv2.cvtColor(color, cv2.COLOR_HSV2BGR)
+        cv2.line(composed_img, c0_p, c1_p, tuple(bgr.flatten().tolist()), 2)
+        color[..., 0] += step
+
+    cv2.imwrite(osp.join(output_path, 'matches.jpg'), composed_img)
